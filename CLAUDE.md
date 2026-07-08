@@ -48,3 +48,8 @@ intentionally incomplete: the student builds the UI on top of a finished calcula
 - `.eslintrc.cjs` was missing from the original course export (course zip omitted it); it's
   been added back matching the standard Vite React template config. Without it, `npm run
   lint` fails immediately with "ESLint couldn't find a configuration file".
+
+## Maintenance
+
+When a new component is finished, add a line for it under "Structure" above. Don't log
+incremental edits — only stable, structural additions worth a future session knowing about.

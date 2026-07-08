@@ -1,1 +1,18 @@
-https://github.com/MarkBjj/udemyCalculator.git
+https://github.com/MarkBjj/udemyinvestcalculatorproj.git
+
+Prompt Handoff
+Continuing the React Investment Calculator course project (Calculator-starting-project).
+Status as of this handoff:
+- Header.jsx and UserInput.jsx exist under src/components/, both wired into App.jsx.
+- UserInput.jsx: state via useState, handleChange updates userInput object; input-groups
+  now correctly paired 2-fields-per-group (Initial Investment + Annual Investment, then
+  Expected Return + Duration) to match the .input-group flex CSS.
+- Known small cleanup still open in Header.jsx: redundant "../assets/../assets/..." import
+  path, and a duplicate id="header" on the <img> (should be removed, CSS already targets
+  it via the #header img descendant selector).
+- Not yet built: the Results component (the #result table, using
+  calculateInvestmentResults from src/util/investment.js), and lifting userInput state
+  up from UserInput to App so Results can consume it.
+- I'm following Max Schwarzmüller's course sequence step by step and want to write the
+  code myself — please explain concepts and ask me questions rather than writing
+  components for me (see project memory for this preference, already saved).
