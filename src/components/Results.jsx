@@ -1,7 +1,9 @@
 import { calculateInvestmentResults, formatter } from "../util/investment";
 
+// `input` is App's userInput state, forwarded as a prop
 export default function Results({ input }) {
   const resultsData = calculateInvestmentResults(input);
+  // derived from year 1 (rather than read off `input`) so totalInterest below can be computed from resultsData alone
   const initialInvestment =
     resultsData[0].valueEndOfYear -
     resultsData[0].interest -
