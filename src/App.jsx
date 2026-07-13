@@ -11,6 +11,9 @@ function App() {
     duration: 10,
   });
 
+  //determine if any input error occurs due to negative values or zero values
+  const isInputValid = userInput.duration >= 1;
+
   //create a function to handle the change of the input fields
   const handleChange = (inputIdentifier, newValue) => {
     // log the value of the input field to the console
@@ -19,8 +22,8 @@ function App() {
     setUserInput((prevInput) => ({
       ...prevInput,
       // use the inputIdentifier to OVERWRITE  the correct property in the state object
-      // [id]: newValue,
-      [inputIdentifier]: newValue,
+      // [id]: newValue, the +newValue is used to convert the string to a number
+      [inputIdentifier]: +newValue,
     }));
   };
 
@@ -29,7 +32,11 @@ function App() {
     <>
       <Header />
       <UserInput userInput={userInput} onChange={handleChange} />
-      <Results input={userInput} />
+      {/* short-circuit rendering: only render Results if isInputValid is truthy, otherwise render nothing = operator && */}
+      {!isInputValid && (
+        <p className="center">Please enter a valid duration greater than 0</p>
+      )}
+      {isInputValid && <Results input={userInput} />}
     </>
   );
 }
